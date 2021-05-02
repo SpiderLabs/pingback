@@ -1,3 +1,6 @@
+# oci.dll malware client using icmp packets for its comms protocol
+# Lloyd Macrohon <jl.macrohon@gmail.com>
+
 import socket
 import threading
 import time
