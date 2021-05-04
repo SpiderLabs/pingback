@@ -1,4 +1,4 @@
-# PingBack
+# Pingback
 
 This is a client for a malware that we found and reversed engineered that uses ICMP tunneling techniques to evade detection.
 The VirusTotal report for this malware can be found here: https://www.virustotal.com/gui/file/e50943d9f361830502dcfdb00971cbee76877aa73665245427d817047523667f/detection
